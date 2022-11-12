@@ -218,24 +218,6 @@ update_kicad-action-scripts()
     done
 }
 
-update_digikey-kicad-library()
-{
-    for repo_digikey_kicad_library in digikey-kicad-library; do
-
-        if [ ! -e "$WORKING_TREES/LIBRARIES/$repo_digikey_kicad_library" ]; then
-
-            echo "installing $WORKING_TREES/LIBRARIES/$repo_digikey_kicad_library"
-
-            git clone "https://github.com/digikey/digikey-kicad-library.git" "$WORKING_TREES/LIBRARIES/$repo_digikey_kicad_library"
-        else
-            echo "updating $WORKING_TREES/LIBRARIES/$repo_digikey_kicad_library"
-            cd "$WORKING_TREES/LIBRARIES/$repo_digikey_kicad_library"
-
-            git pull
-        fi
-    done
-}
-
 update_plugins()
 {
     for repo_plugins in InteractiveHtmlBom; do
@@ -265,7 +247,6 @@ if [ $# -eq 1 -a "$1" == "--install-or-update" ]; then
     update_kicad_packages3D_generator
     update_utils
     update_kicad-action-scripts
-    update_digikey-kicad-library
 
     ##  T H I S  I S  W H E R E  M A G I C  H A P P E N S !
 
