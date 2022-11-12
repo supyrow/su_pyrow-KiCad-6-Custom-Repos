@@ -44,6 +44,9 @@ sudo rm /etc/profile.d/kicad-env.sh
 ```bash
 /usr/share/kicad-nightly/kicad-nightly.env
 ```
+# You must change PATH:
+* /crypt-storage1/electronics/KiCad/
+
 ```bash
 export KICAD6_FOOTPRINT_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-footprints"
 export KICAD6_SYMBOL_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-symbols"
@@ -89,8 +92,9 @@ su_pyrow-KiCad-6-Custom-Repos.sh
 
 #This was adapted from the script entitled kicad-libraries-repos.sh
 
+# Y O U   M U S T  C H A N G E  PATH:
 
-# Set where the library repos will go, use a full path
+# Set where the library repos will go, use a full path it will create two new directories.  'PLUGINS' and 'LIBRARIES'
 WORKING_TREES=${WORKING_TREES:-/crypt-storage1/electronics/KiCad}
 
 # this is located in your home directory
