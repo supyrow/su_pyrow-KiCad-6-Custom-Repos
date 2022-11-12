@@ -139,22 +139,6 @@ install_prerequisites()
     fi
 }
 
-detect_pretty_repos()
-{
-
-    #echo "FP_REPOS:$FP_REPOS"
-
-    FP_REPOS=`curl -s 'https://gitlab.com/kicad/libraries/kicad-footprints' 2> /dev/null \
-    | grep -oP '(?<=href=")[^"]+.pretty(?=")' | cut -d'/' -f6-`
-
-    FP_REPOS_BAT=`curl -s 'https://gitlab.com/kicad/libraries/kicad-footprints' 2> /dev/null \
-    | grep -oP '(?<=href=")[^"]+.pretty(?=")' | cut -d'/' -f6-`
-
-	#FP_REPOS=`echo $FP_REPOS | tr " " "\n" | sort`
-
-   #echo "repo_footprints sorted:$repo_footprints"
-}
-
 update_dirs()
 {
 
