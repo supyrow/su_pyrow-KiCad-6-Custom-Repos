@@ -29,6 +29,7 @@ export KISYS3DMOD="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-packages3D"
 export KISYSMOD="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-footprints"
 export KICAD_USER_TEMPLATE_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/Mykicad-templates"
 export KICAD_TEMPLATE_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-templates/Projects"
+
 export KISYSMINE="/crypt-storage1/electronics/KiCad/LIBRARIES"
 export MYPACKAGES3D="/crypt-storage1/electronics/KiCad/LIBRARIES/MyPackages3D"
 ```
