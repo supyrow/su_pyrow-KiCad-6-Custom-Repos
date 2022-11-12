@@ -15,7 +15,7 @@
 
 # 1) You want local copies of bleeding edge symbols, 3D and parts
 # 2) you have your own working library(symbols/parts) and 3D STEP/IGES files
-# 3) sick of needed to add them to every single project you start.
+# 3) sick of needing to add them to every single project you start.
 
 #Auto download kicad-libraries, kicad-footprints, kicad-templates, kicad-packages3D and kicad-symbols.
 #this also updates the proper Table files so it is reflected in eeschema and pcbnew.
