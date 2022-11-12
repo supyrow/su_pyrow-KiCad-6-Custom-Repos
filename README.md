@@ -1,4 +1,4 @@
-# su_pyrow-KiCad-6-Custom-Repos
+# su_pyrow-KiCad-6-Custom-Repos.sh
  Automate downloading and updating of KiCad-6-dev AKA KiCad-nightly Libraries including 3D, Schematic symbols, PCB footprints, Templates, update the symbol and footprint tables.
  
  In addition it can also conveniently add your own custom library that you may have already created at the very end of those tables!
@@ -52,9 +52,20 @@ export KICAD6_TEMPLATE_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-te
 export KICAD6_PLUGN_DIR="/crypt-storage1/electronics/KiCad/PLUGINS"
 ```
 # now... the actual script
+* copy and save as
+```bash
+su_pyrow-KiCad-6-Custom-Repos.sh
+```
+# make script executable
+```bash
+chmod +x su_pyrow-KiCad-6-Custom-Repos.sh
+```
  
- ```bash
+```bash
 #!/bin/bash
+#
+# su_pyrow-KiCad-6-Custom-Repos.sh
+#
 # Get all KiCad library and plugin repos:
 #
 # The "install_prerequisites" step is the only "distro dependent" one.  Could modify
@@ -95,17 +106,11 @@ usage()
     echo ""
     echo " usage:"
     echo ""
-    echo "./kicad-libraries-repos.sh <cmd>"
+    echo "./su_pyrow-KiCad-6-Custom-Repos.sh <cmd>"
     echo "    where <cmd> is one of:"
-    echo "      --install-prerequisites     (install command tools needed here, run once first.)"
-    echo "      --install-or-update         (from github, into $WORKING_TREES/LIBRARIES/. )"
-    echo "      --remove-all-libraries      (remove all libraries from $WORKING_TREES/LIBRARIES/. )"
-    echo "      --remove-orphaned-libraries (remove local footprint libraries which have been deleted or renamed at github.)"
-    echo "      --list-footprint-libraries  (show the full list of github footprint libraries.)"
-    echo ""
     echo "	examples (with --install-prerequisites once first):"
-    echo "	$ ./kicad-libraries-repos.sh --install-prerequisites"
-    echo "	$ ./kicad-libraries-repos.sh --install-or-update"
+    echo "	$ ./su_pyrow-KiCad-6-Custom-Repos.sh --install-prerequisites"
+    echo "	$ ./su_pyrow-KiCad-6-Custom-Repos.sh --install-or-update"
 }
 
 install_prerequisites()
@@ -131,32 +136,6 @@ install_prerequisites()
         echo "script."
         echo
         exit 1
-    fi
-}
-
-rm_build_dir()
-{
-    local dir="$1"
-    # this file is often created as root, so remove as root
-    sudo rm "$dir/install_manifest.txt" 2> /dev/null
-    rm -rf "$dir"
-}
-
-cmake_uninstall()
-{
-    # assume caller set the CWD, and is only telling us about it in $1
-    local dir="$1"
-
-    cwd=`pwd`
-    if [ "$cwd" != "$dir" ]; then
-        echo "missing dir $dir"
-    elif [ ! -e install_manifest.txt  ]; then
-        echo
-        echo "Missing file $dir/install_manifest.txt."
-    else
-        echo "uninstalling from $dir"
-        sudo make uninstall
-        sudo rm install_manifest.txt
     fi
 }
 
@@ -376,50 +355,6 @@ update_plugins()
     done
 }
 
-listcontains()
-{
-    local list=$1
-    local item=$2
-    local ret=1
-    local OIFS=$IFS
-
-    # omit the space character from internal field separator.
-    IFS=$'\n'
-
-    for word in $list; do
-        if [ "$word" == "$item" ]; then
-            ret=0
-            break
-        fi
-    done
-
-    IFS=$OIFS
-    return $ret
-}
-
-remove_orphaned_libraries()
-{
-    cd $WORKING_TREES/LIBRARIES/kicad-footprints
-
-    if [ $? -ne 0 ]; then
-        echo "Directory $WORKING_TREES/LIBRARIES/kicad-footprints does not exist."
-        echo "The option --remove-orphaned-libraries should be used only after you've run"
-        echo "the --install-or-update at least once."
-        exit 2
-    fi
-
-    detect_pretty_repos
-
-    for mylib in *.pretty; do
-        echo "checking local lib: $mylib"
-
-        if ! listcontains "$repo_footprints" "$mylib"; then
-            echo "Removing orphaned local library $WORKING_TREES/LIBRARIES/kicad-footprints/$mylib"
-            rm -rf "$mylib"
-        fi
-    done
-}
-
 if [ $# -eq 1 -a "$1" == "--install-or-update" ]; then
     update_dirs
     update_symbols
@@ -452,25 +387,8 @@ if [ $# -eq 1 -a "$1" == "--install-or-update" ]; then
     exit
 fi
 
-if [ $# -eq 1 -a "$1" == "--remove-orphaned-libraries" ]; then
-    remove_orphaned_libraries
-    exit
-fi
-
 if [ $# -eq 1 -a "$1" == "--install-prerequisites" ]; then
     install_prerequisites
-    exit
-fi
-
-if [ $# -eq 1 -a "$1" == "--list-footprint-libraries" ]; then
-
-    # use github API to get repos into PRETTY_REPOS var
-    detect_pretty_repos
-
-    #for repo_footprints in $FP_REPOS; do
-    echo "$repo_footprints"
-    #done
-
     exit
 fi
 
