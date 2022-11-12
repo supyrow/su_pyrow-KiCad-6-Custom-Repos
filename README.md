@@ -3,7 +3,7 @@
  
  In addition it can also conveniently add your own custom library that you may have already created at the very end of those tables!
 
-# first we need to eastablish some variables.
+# first we need to establish some variables.
    * add this to your ~/.bashrc
    * NOTE: this is where KiCad will look for your libararies. 
    * KISYSMINE points to DIRECTORY where your custom lybarary file islocated.
@@ -32,7 +32,7 @@ export KICAD_TEMPLATE_DIR="/crypt-storage1/electronics/KiCad/LIBRARIES/kicad-tem
 export KISYSMINE="/crypt-storage1/electronics/KiCad/LIBRARIES"
 export MYPACKAGES3D="/crypt-storage1/electronics/KiCad/LIBRARIES/MyPackages3D"
 ```
-# this file needs to be removed or remove executibility
+# this file needs to be removed or change(chmod) executable status
 ```bash
 sudo chmod -x /etc/profile.d/kicad-env.sh
 ```
