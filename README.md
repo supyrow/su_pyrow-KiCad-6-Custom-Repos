@@ -60,6 +60,16 @@ su_pyrow-KiCad-6-Custom-Repos.sh
 ```bash
 chmod +x su_pyrow-KiCad-6-Custom-Repos.sh
 ```
+# run script
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh
+```
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh --install-prerequisites
+```
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh --install-or-update
+```
  
 ```bash
 #!/bin/bash
