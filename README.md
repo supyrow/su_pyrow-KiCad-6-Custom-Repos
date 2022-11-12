@@ -1,7 +1,7 @@
 # su_pyrow-KiCad-6-Custom-Repos.sh
- Automate downloading and updating of KiCad-6-dev AKA KiCad-nightly Libraries including 3D, Schematic symbols, PCB footprints, Templates, update the symbol and footprint tables.
+ Automate downloading and updating of KiCad-6-dev AKA KiCad-nightly Libraries including 3D, Schematic symbols, PCB footprints, Templates, update the symbol and footprint tables WITH your custom libararies.
  
- In addition it can also conveniently add your own custom library that you may have already created at the very end of those tables!
+ Conveniently add your own custom library that you may have already created at the very end of those tables!
 
 # first we need to establish some variables.
    * add this to your ~/.bashrc
