@@ -46,6 +46,9 @@ sudo rm /etc/profile.d/kicad-env.sh
 /usr/share/kicad-nightly/kicad-nightly.env
 ```
 # You must change PATH:
+* /crypt-storage1/electronics/KiCad
+* Set where the library repos will go, use a full path it will create two new directories.
+* * 'PLUGINS' and 'LIBRARIES' inside of:
 * /crypt-storage1/electronics/KiCad/
 
 ```bash
