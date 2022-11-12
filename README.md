@@ -380,3 +380,7 @@ chmod +x su_pyrow-KiCad-6-Custom-Repos.sh
 ```bash
 ./su_pyrow-KiCad-6-Custom-Repos.sh --install-or-update
 ```
+# the bleeding edge.
+* This is how i keep my repos updated everyday and my custom 3D, parts and symbols are always there for every new project created!
+
+ENJOY!
