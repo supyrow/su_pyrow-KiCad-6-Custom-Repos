@@ -56,21 +56,7 @@ export KICAD6_PLUGN_DIR="/crypt-storage1/electronics/KiCad/PLUGINS"
 ```bash
 su_pyrow-KiCad-6-Custom-Repos.sh
 ```
-# make script executable
-```bash
-chmod +x su_pyrow-KiCad-6-Custom-Repos.sh
-```
-# run script
-```bash
-./su_pyrow-KiCad-6-Custom-Repos.sh
-```
-```bash
-./su_pyrow-KiCad-6-Custom-Repos.sh --install-prerequisites
-```
-```bash
-./su_pyrow-KiCad-6-Custom-Repos.sh --install-or-update
-```
- 
+
 ```bash
 #!/bin/bash
 #
@@ -387,4 +373,18 @@ if [ $# -eq 1 -a "$1" == "--install-prerequisites" ]; then
 fi
 
 usage
+```
+# make script executable
+```bash
+chmod +x su_pyrow-KiCad-6-Custom-Repos.sh
+```
+# run script
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh
+```
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh --install-prerequisites
+```
+```bash
+./su_pyrow-KiCad-6-Custom-Repos.sh --install-or-update
 ```
