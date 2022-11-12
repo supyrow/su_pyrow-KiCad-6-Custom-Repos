@@ -227,7 +227,7 @@ update_footprints()
 {
     for repo_footprints in kicad-footprints; do
          #echo "repo_footprints:$repo_footprints"
-         
+
         if [ ! -e "$WORKING_TREES/LIBRARIES/$repo_footprints" ]; then
             echo "installing $WORKING_TREES/LIBRARIES/$repo_footprints"
             git clone "https://gitlab.com/kicad/libraries/kicad-footprints.git" "$WORKING_TREES/LIBRARIES/$repo_footprints"
@@ -358,6 +358,7 @@ if [ $# -eq 1 -a "$1" == "--install-prerequisites" ]; then
 fi
 
 usage
+
 ```
 # make script executable
 ```bash
