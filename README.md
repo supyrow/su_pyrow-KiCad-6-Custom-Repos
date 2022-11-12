@@ -3,6 +3,12 @@
 
  Conveniently add your own custom library that you may have already created at the very end of those tables!
 
+There are three reasons why you might want to run this script:
+
+1) You want local copies of bleeding edge symbols, 3D and parts
+2) you have your own working libarary(symbols/parts) and 3D STEP/IGES files 
+3) sick of needed to add them to every single project you start.
+
 # first we need to establish some variables.
    * add this to your ~/.bashrc
    * NOTE: this is where KiCad will look for your libararies.
@@ -78,18 +84,11 @@ su_pyrow-KiCad-6-Custom-Repos.sh
 # git clone from github.com/gitlab is slow.
 # After that updates should run faster.
 
-# There are two reasons why you might want to run this script:
-#
-# 1) You want to contribute to the KiCad library team maintained libraries and have yet to
-#    discover or have chosen not to use the COW feature in the Github/gitlab "Plugin Type".
-#
-# 2) You want to run with local footprint libraries and not those remotely located
-#    on https://github.com / https://gitlab.com using Github/gitlab plugin.  After running this script you should
-#      a)  $ cp ~/kicad_sources/library-repos/kicad-library/template/fp-lib-table ~/$TABLE_DEST_DIR/fp-lib-table
-#    and then
-#      b) set your environment variable KISYSMOD/KISYSMOD3D to "~/kicad_sources/library-repos".
-#         Edit /etc/profile.d/kicad.sh, then reboot.
-#
+# There are three reasons why you might want to run this script:
+
+# 1) You want local copies of bleeding edge symbols, 3D and parts
+# 2) you have your own working libarary(symbols/parts) and 3D STEP/IGES files 
+# 3) sick of needed to add them to every single project you start.
 
 #Auto download kicad-libraries, kicad-footprints, kicad-templates, kicad-packages3D and kicad-symbols.
 #this also updates the proper Table files so it is reflected in eeschema and pcbnew.
