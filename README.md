@@ -338,11 +338,11 @@ if [ $# -eq 1 -a "$1" == "--install-or-update" ]; then
 
     echo "Placing KiCad Symbol & Footprint Library Tables = fp-lib-table and sym-lib-table to /home/$USER/$TABLE_DEST_DIR"
 
-    head -n -1 /crypt-storage1/electronics/KiCad/LIBRARIES/kicad-footprints/fp-lib-table > /home/$USER/$TABLE_DEST_DIR/fp-lib-table;
+    head -n -1 $WORKING_TREES/LIBRARIES/kicad-footprints/fp-lib-table > /home/$USER/$TABLE_DEST_DIR/fp-lib-table;
 
     echo '  (lib (name MyCustomParts)(type KiCad)(uri "$(KISYSMINE)/MyCustomParts.pretty")(options "")(descr "My Custom Component Footprints")))' >> /home/$USER/$TABLE_DEST_DIR/fp-lib-table;
 
-    head -n -1 /crypt-storage1/electronics/KiCad/LIBRARIES/kicad-symbols/sym-lib-table > /home/$USER/$TABLE_DEST_DIR/sym-lib-table
+    head -n -1 $WORKING_TREES/LIBRARIES/kicad-symbols/sym-lib-table > /home/$USER/$TABLE_DEST_DIR/sym-lib-table
 
     echo '  (lib (name "MyCustomComponents")(type "KiCad")(uri "${KISYSMINE}/MyCustomLibrary/MyCustomComponents.kicad_sym")(options "")(descr "My Custom Schematic Symbols")))' >> /home/$USER/$TABLE_DEST_DIR/sym-lib-table;
 
