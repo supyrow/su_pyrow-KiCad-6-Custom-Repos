@@ -104,20 +104,6 @@ update_dirs()
     fi
 }
 
-update_kicad()
-{
-    for repo_kicad in 6.99; do
-        if [ ! -e "$WORKING_TREES/$repo_kicad" ]; then
-            echo "installing $WORKING_TREES/$repo_kicad"
-            git clone "https://gitlab.com/kicad/code/kicad.git" "$WORKING_TREES/$repo_kicad"
-        else
-            echo "updating $WORKING_TREES/$repo_kicad"
-            cd "$WORKING_TREES/$repo_kicad"
-            git pull
-        fi
-    done
-}
-
 update_kicad_packages3D_generator()
 {
     for repo_packages3D_generator in kicad-packages3D-generator; do
@@ -285,7 +271,6 @@ if [ $# -eq 1 -a "$1" == "--install-or-update" ]; then
     update_doc
     update_plugins
     update_kicad_packages3D_generator
-    update_kicad
     update_utils
     update_kicad-action-scripts
     update_digikey-kicad-library
