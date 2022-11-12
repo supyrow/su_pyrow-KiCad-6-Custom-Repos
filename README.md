@@ -6,7 +6,7 @@
 There are three reasons why you might want to run this script:
 
 1) You want local copies of bleeding edge symbols, 3D and parts
-2) you have your own working libarary(symbols/parts) and 3D STEP/IGES files 
+2) you have your own working library(symbols/parts) and 3D STEP/IGES files 
 3) sick of needed to add them to every single project you start.
 
 # first we need to establish some variables.
@@ -87,7 +87,7 @@ su_pyrow-KiCad-6-Custom-Repos.sh
 # There are three reasons why you might want to run this script:
 
 # 1) You want local copies of bleeding edge symbols, 3D and parts
-# 2) you have your own working libarary(symbols/parts) and 3D STEP/IGES files 
+# 2) you have your own working library(symbols/parts) and 3D STEP/IGES files 
 # 3) sick of needed to add them to every single project you start.
 
 #Auto download kicad-libraries, kicad-footprints, kicad-templates, kicad-packages3D and kicad-symbols.
