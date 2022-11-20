@@ -12,7 +12,7 @@ There are three reasons why you might want to run this script:
 # first we need to establish some variables.
    * add this to your ~/.bashrc
    * NOTE: this is where KiCad will look for your libararies.
-   * KISYSMINE points to DIRECTORY where your custom lybarary file islocated.
+   * KISYSMINE points to DIRECTORY where your custom library file is located.
    * MYPACKAGES3D points to DIRECTORY where your custom 3D packages are located.
 ```bash
 # ~/.bashrc
